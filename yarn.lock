@@ -5768,6 +5768,11 @@ react-native-config@^1.4.3:
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.4.3.tgz#22de798ffea621c2683abfa3fc054e17dd2cf1cc"
   integrity sha512-KcrlImtkrANeYMT5VM3NaXO5+nyxZkY42CVW8FCHThVqLa5xkNwQJSn8RXu+pNn5WpUatxYgUTP5ZqUpA4/ZKQ==
 
+react-native-dialog@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-dialog/-/react-native-dialog-8.2.0.tgz#e7ad6fffd2007b19766961692d553efff377c80b"
+  integrity sha512-Unfx9curgyCfC6iHJwKVYgztKtE51A6x2pqI4RRt9SXqcurgCb6U6qe93cOY1Y2S7iRxNpgJkF3AS0QahKbPGQ==
+
 react-native-geolocation-service@^5.3.0-beta.1:
   version "5.3.0-beta.1"
   resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-5.3.0-beta.1.tgz#91b78e8f87caa0fd4fd1a2384bb48a6309ec715a"
@@ -5797,6 +5802,11 @@ react-native-paper@^4.9.2:
     "@callstack/react-theme-provider" "^3.0.6"
     color "^3.1.2"
     react-native-iphone-x-helper "^1.3.1"
+
+react-native-permissions@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.0.5.tgz#94542a343abdac801fa0a4593ea2c751cb45c41f"
+  integrity sha512-hcvLtHhTyOTXC+CCv79d4Qtdnj6PGuY5Ms0fhW8V6Et1T/mPvzO6++Du4jwEv/oHZ62qMWKUDq0/Tsh63QHuyQ==
 
 react-native-reanimated@^2.2.0:
   version "2.2.0"
