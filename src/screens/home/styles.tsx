@@ -24,3 +24,8 @@ export const Item = styled.View`
   flex-direction: row;
   align-items: center;
 `;
+
+export const ButtonRefresh = styled.TouchableOpacity`
+  align-self: center;
+  margin-top: 20px;
+`;

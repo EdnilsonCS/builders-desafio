@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
-import { Text } from 'react-native-paper';
+import { Text, ActivityIndicator } from 'react-native-paper';
 import Dialog from 'react-native-dialog';
 import {
   PERMISSIONS,
@@ -10,17 +10,17 @@ import {
   openSettings,
 } from 'react-native-permissions';
 import Geolocation, { GeoPosition } from 'react-native-geolocation-service';
-import { TouchableOpacity, Platform, View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { Icon } from '../../components';
-import { Container, Card, TextTitle, Item } from './styles';
+import { Container, Card, TextTitle, Item, ButtonRefresh } from './styles';
 import WeatherService, { ILocalWeather } from '../../service/WeatherService';
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
   const [weather, setWeather] = useState<ILocalWeather>();
-  const [andress, setAndress] = useState('');
+
   const [position, setPosition] = useState<GeoPosition>();
-  const [loader, setLoader] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
 
   useEffect(() => {
@@ -37,14 +37,14 @@ const Home: React.FC = () => {
         }),
       );
       if (resultLocation === RESULTS.GRANTED) {
-        setLoader(true);
+        setLoading(true);
         Geolocation.getCurrentPosition(
           positionData => {
             setPosition(positionData);
-            setLoader(false);
+            setLoading(false);
           },
           () => {
-            setLoader(false);
+            setLoading(false);
           },
           { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
         );
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         setShowDialog(true);
       }
     } catch (error) {
-      setLoader(true);
+      setLoading(true);
     }
   }, []);
   useEffect(() => {
@@ -88,30 +88,35 @@ const Home: React.FC = () => {
   return (
     <>
       <Container>
-        <Card>
-          <View>
-            <Item>
-              <TextTitle>Wether:</TextTitle>
-              <Text>{whetherTextNow}</Text>
-            </Item>
-            <Item>
-              <TextTitle>Temperature:</TextTitle>
-              <Text> {weather?.main.temp} </Text>
-            </Item>
-            <Item>
-              <TextTitle>Max temperature:</TextTitle>
-              <Text>{weather?.main.temp_max}</Text>
-            </Item>
-            <Item>
-              <TextTitle>Min Temperature:</TextTitle>
-              <Text>{weather?.main.temp_min}</Text>
-            </Item>
-          </View>
-          <TouchableOpacity onPress={refreshDate}>
-            <Icon source="MaterialIcons" name="refresh" size={40} />
-          </TouchableOpacity>
-        </Card>
+        {loading ? (
+          <ActivityIndicator />
+        ) : (
+          <Card>
+            <View>
+              <Item>
+                <TextTitle>Wether:</TextTitle>
+                <Text>{whetherTextNow}</Text>
+              </Item>
+              <Item>
+                <TextTitle>Temperature:</TextTitle>
+                <Text> {weather?.main.temp} </Text>
+              </Item>
+              <Item>
+                <TextTitle>Max temperature:</TextTitle>
+                <Text>{weather?.main.temp_max}</Text>
+              </Item>
+              <Item>
+                <TextTitle>Min Temperature:</TextTitle>
+                <Text>{weather?.main.temp_min}</Text>
+              </Item>
+            </View>
+            <ButtonRefresh onPress={refreshDate}>
+              <Icon source="MaterialIcons" name="refresh" size={40} />
+            </ButtonRefresh>
+          </Card>
+        )}
       </Container>
+
       <Dialog.Container visible={showDialog}>
         <Dialog.Title>We need your permission</Dialog.Title>
         <Dialog.Description>
