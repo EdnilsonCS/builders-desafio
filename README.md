@@ -27,20 +27,21 @@ gratuitamente no link https://openweathermap.org/api  .
 
 ## Interfaces:
 ### Splash Screens
-![Alt text](../master/docs/images/splash_screen_android.png?raw=true "Splash Screen Android")
 
-![Alt text](../master/docs/images/splash_screen_ios.png?raw=true "Splash Screen IOs")
+![Alt text](../main/docs/loading_screen_android.png "Splash Screen Android")
+
+![Alt text](../main/docs/splash_screen_ios.png "Splash Screen IOs")
 
 
 ### Loading Screens
 
-![Alt text](../master/docs/images/loading_screen_android.png?raw=true "Loading Screen Android")
+![Alt text](../main/docs/loading_screen_android.png "Loading Screen Android")
 
-![Alt text](../master/docs/images/loading_screen_ios.png?raw=true "Loading Screen IOS")
+![Alt text](../main/docs/loading_screen_ios.png?raw=true "Loading Screen IOS")
 
 
 ###  Weather Screen
 
-![Alt text](../master/docs/images/weather_screen_android.png?raw=true "Home Android")
+![Alt text](../main/docs/weather_screen_android.png?raw=true "Home Android")
 
-![Alt text](../master/docs/images/weather_screen_ios.png?raw=true "Home IOS")
+![Alt text](../main/docs/weather_screen_ios.png?raw=true "Home IOS")
