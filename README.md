@@ -43,7 +43,7 @@ gratuitamente no link https://openweathermap.org/api  .
 ## Interfaces:
 ### Splash Screens
 
-![Alt text](../main/docs/images/loading_screen_android.png "Splash Screen Android")
+![Alt text](../main/docs/images/splash_screen_android.png "Splash Screen Android")
 
 ![Alt text](../main/docs/images/splash_screen_ios.png "Splash Screen IOs")
 
