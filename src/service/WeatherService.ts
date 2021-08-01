@@ -52,6 +52,7 @@ class WeatherService {
     latitude,
     longitude,
   }: IGetWeatherByLatLngDTO): Promise<ILocalWeather> {
+    console.log(Config.WEATHER_API_KEY);
     const { data } = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${Config.WEATHER_API_KEY}&units=metric`,
     );
